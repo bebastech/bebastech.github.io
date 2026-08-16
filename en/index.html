@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_en
 title: Home - BebasTech
 ---
 <!-- Hero Section -->
@@ -11,14 +11,10 @@ title: Home - BebasTech
         <p class="text-lg text-gray-300 max-w-2xl font-light leading-relaxed mb-8">
             An independent space discussing the latest gadgets, AI development, and global issues from an unfiltered perspective.
         </p>
-        <!-- Tombol Kembali ke Indo -->
-        <a href="/" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-utama transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-            Back to Indonesian
-        </a>
     </div>
 </div>
 
-<!-- Struktur Halaman: Daftar Artikel (Versi Inggris) -->
+<!-- English Articles List -->
 <div id="latest-opinions" class="not-prose pt-10">
     <h2 class="text-sm font-bold tracking-widest uppercase text-aksen mb-8 flex items-center gap-4">
         <span class="w-8 h-[1px] bg-aksen inline-block"></span> Latest Opinions
@@ -31,7 +27,6 @@ title: Home - BebasTech
                 <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
                     {{ post.date | date: "%d %b %y" }}
                 </div>
-                <!-- Judul Artikel akan otomatis muncul di sini -->
                 <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
                 <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
             </div>
