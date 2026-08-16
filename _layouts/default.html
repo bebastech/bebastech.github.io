@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
+    <!-- LOGO TAB (Favicon) -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
         tailwind.config = {
             theme: {
-                extend: {
-                    colors: {
-                        utama: '#022c22', // Hijau Zamrud sangat gelap (Background)
-                        aksen: '#10b981', // Hijau Zamrud terang (Accent)
-                        teks: '#f8fafc'
-                    }
-                }
+                extend: { colors: { utama: '#022c22', aksen: '#10b981', teks: '#f8fafc' } }
             }
         }
     </script>
@@ -26,22 +23,49 @@
 </head>
 <body class="antialiased flex flex-col min-h-screen selection:bg-aksen selection:text-white">
     
-    <!-- Header Navigasi -->
-    <nav class="p-6 md:p-10 flex justify-between items-center max-w-4xl mx-auto w-full border-b border-aksen/20">
-        <a href="/" class="text-2xl font-extrabold tracking-tighter text-white hover:text-aksen transition">BEBASTECH<span class="text-aksen">.</span></a>
-        <a href="/" class="text-sm font-medium text-gray-300 hover:text-white transition">Beranda</a>
+    <!-- Header Navigasi Baru -->
+    <nav class="p-6 md:p-10 flex flex-wrap justify-between items-center max-w-4xl mx-auto w-full border-b border-aksen/20 gap-4">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter text-white hover:text-aksen transition z-50">BEBASTECH<span class="text-aksen">.</span></a>
+        
+        <div class="flex items-center gap-4 md:gap-6 z-50">
+            <a href="/" class="text-sm font-medium text-gray-300 hover:text-white transition">Beranda</a>
+            
+            <!-- DROPDOWN MENU: About -->
+            <div class="relative group">
+                <button class="text-sm font-medium text-gray-300 hover:text-white transition flex items-center gap-1 cursor-pointer pb-1">
+                    Tentang <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Kotak Sub-menu -->
+                <div class="absolute right-0 mt-2 w-48 bg-utama border border-aksen/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <a href="/about" class="block px-5 py-3 text-sm text-gray-300 hover:text-utama hover:bg-aksen rounded-t-xl transition">Profil Penulis</a>
+                    <a href="/kontak" class="block px-5 py-3 text-sm text-gray-300 hover:text-utama hover:bg-aksen rounded-b-xl transition">Hubungi Kami</a>
+                </div>
+            </div>
+
+            <!-- OPSI BAHASA -->
+            <div class="flex items-center gap-2 border-l border-gray-600 pl-4 md:pl-6">
+                <a href="/" class="text-xs font-bold text-aksen bg-aksen/10 px-2 py-1 rounded">ID</a>
+                <a href="/en" class="text-xs font-medium text-gray-400 hover:text-white transition">EN</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Konten Utama -->
-    <main class="max-w-4xl mx-auto w-full px-6 py-10 flex-grow">
+    <main class="max-w-4xl mx-auto w-full px-6 py-10 flex-grow relative z-10">
         <div class="prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:text-white prose-a:text-aksen prose-a:underline-offset-4">
             {{ content }}
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-10 text-xs text-gray-400 font-bold tracking-widest uppercase mt-auto border-t border-aksen/20 bg-black/20">
-        © 2026 BebasTech. Dibangun dengan kebebasan beropini.
+    <!-- Footer dengan Sosmed -->
+    <footer class="text-center py-10 mt-auto border-t border-aksen/20 bg-black/20">
+        <!-- LINK SOSMED -->
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://twitter.com/kurniawan" target="_blank" class="text-gray-400 hover:text-aksen transition text-sm font-medium uppercase tracking-wider">X/Twitter</a>
+            <a href="https://linkedin.com/in/kurniawan" target="_blank" class="text-gray-400 hover:text-aksen transition text-sm font-medium uppercase tracking-wider">LinkedIn</a>
+            <a href="https://github.com/bebastech" target="_blank" class="text-gray-400 hover:text-aksen transition text-sm font-medium uppercase tracking-wider">GitHub</a>
+        </div>
+        <p class="text-xs text-gray-500 font-bold tracking-widest uppercase">© 2026 BebasTech. Dibangun dengan kebebasan beropini.</p>
     </footer>
 </body>
 </html>
