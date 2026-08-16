@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<!-- Hero Section -->
+<div class="mb-20 not-prose text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+    <div class="flex-1">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight text-white">
+            Masa Depan <br><span class="text-aksen">Di Tanganmu.</span>
+        </h1>
+        <p class="text-lg text-gray-300 max-w-2xl font-light leading-relaxed mb-8">
+            Sebuah blog teknologi yang mengupas tuntas gadget terbaru, keamanan privasi, dan opini global tanpa filter.
+        </p>
+        <!-- Tombol CTA -->
+        <a href="#artikel-terbaru" class="inline-block bg-aksen text-utama font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-utama transition duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+            Jelajahi Artikel
+        </a>
+    </div>
+</div>
+
+<!-- Struktur Halaman: Daftar Artikel -->
+<div id="artikel-terbaru" class="not-prose pt-10">
+    <h2 class="text-sm font-bold tracking-widest uppercase text-aksen mb-8 flex items-center gap-4">
+        <span class="w-8 h-[1px] bg-aksen inline-block"></span> Katalog Opini Terbaru
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+        {% for post in site.posts %}
+        <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
+            <div>
+                <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
+                    {{ post.date | date: "%d %b %y" }}
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
+                <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            </div>
+            <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
+                Baca Selengkapnya &rarr;
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>

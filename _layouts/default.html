@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        utama: '#022c22', // Hijau Zamrud sangat gelap (Background)
+                        aksen: '#10b981', // Hijau Zamrud terang (Accent)
+                        teks: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #022c22; color: #f8fafc; }
+        .glass-panel { background: rgba(255,255,255,0.02); border: 1px solid rgba(16, 185, 129, 0.2); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen selection:bg-aksen selection:text-white">
+    
+    <!-- Header Navigasi -->
+    <nav class="p-6 md:p-10 flex justify-between items-center max-w-4xl mx-auto w-full border-b border-aksen/20">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter text-white hover:text-aksen transition">BEBASTECH<span class="text-aksen">.</span></a>
+        <a href="/" class="text-sm font-medium text-gray-300 hover:text-white transition">Beranda</a>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="max-w-4xl mx-auto w-full px-6 py-10 flex-grow">
+        <div class="prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:text-white prose-a:text-aksen prose-a:underline-offset-4">
+            {{ content }}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 text-xs text-gray-400 font-bold tracking-widest uppercase mt-auto border-t border-aksen/20 bg-black/20">
+        © 2026 BebasTech. Dibangun dengan kebebasan beropini.
+    </footer>
+</body>
+</html>
