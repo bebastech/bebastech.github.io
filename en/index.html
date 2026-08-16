@@ -22,6 +22,25 @@ title: Home - BebasTech
     
     <div class="grid md:grid-cols-2 gap-6">
         {% for post in site.posts %}
+        <div class="grid md:grid-cols-2 gap-6">
+    {% for post in site.posts %}
+    {% if post.lang == 'en' %}
+    <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
+        <div>
+            <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
+                {{ post.date | date: "%d %b %y" }}
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-aksen transition">{{ post.title }}</h3>
+            <p class="text-gray-400 text-sm font-medium leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        </div>
+        <div class="mt-6 text-aksen font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
+            Read More &rarr;
+        </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+</div>
+
         <a href="{{ post.url }}" class="glass-panel p-8 rounded-3xl hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] transition duration-500 group flex flex-col justify-between min-h-[250px]">
             <div>
                 <div class="text-xs font-bold tracking-widest uppercase text-aksen mb-4">
