@@ -2,6 +2,7 @@
 layout: default_en
 title: "Two Sides of the Tech Mirror: AI Convenience and Future Worries"
 date: 2026-08-16
+lang: en
 ---
 
 # Two Sides of the Tech Mirror: AI Convenience and Future Worries
