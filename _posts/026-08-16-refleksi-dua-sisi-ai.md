@@ -2,6 +2,7 @@
 layout: default
 title: "Dua Sisi Cermin Teknologi: Antara Kemudahan AI dan Kekhawatiran Masa Depan"
 date: 2026-08-16
+lang: id
 ---
 
 # Dua Sisi Cermin Teknologi: Antara Kemudahan AI dan Kekhawatiran Masa Depan
