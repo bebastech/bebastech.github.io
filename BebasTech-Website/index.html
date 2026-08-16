@@ -1,0 +1,23 @@
+---
+layout: default
+title: Beranda - BebasTech
+---
+<div class="mb-14">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Ruang Opini & Teknologi</h1>
+    <p class="text-gray-400 text-lg md:text-xl">Membahas gadget terbaru, perkembangan AI, dan isu dunia dari sudut pandang independen.</p>
+</div>
+
+<h2 class="text-xl font-bold mb-6 border-b border-gray-800 pb-3 text-blue-400 uppercase tracking-wider">Artikel Terbaru</h2>
+
+<div class="space-y-8">
+    {% for post in site.posts %}
+    <article class="bg-gray-800 p-6 rounded-xl shadow-lg hover:ring-2 ring-blue-500 hover:-translate-y-1 transition duration-300">
+        <h3 class="text-2xl font-bold mb-2 leading-tight">
+            <a href="{{ post.url }}" class="text-gray-100 hover:text-blue-400">{{ post.title }}</a>
+        </h3>
+        <p class="text-xs font-mono text-gray-400 mb-4">{{ post.date | date: "%d %B %Y" }}</p>
+        <p class="text-gray-300 leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url }}" class="inline-block mt-5 text-blue-400 hover:text-blue-300 font-bold text-sm tracking-wide">BACA SELENGKAPNYA &rarr;</a>
+    </article>
+    {% endfor %}
+</div>
